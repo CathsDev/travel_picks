@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_picks/country_card.dart';
 
 void main() {
   runApp(const TravelApp());
@@ -67,6 +68,7 @@ class _TravelHomePageState extends State<TravelHomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Header Card
           Card(
             elevation: 4,
             color: Colors.lightBlueAccent,
@@ -81,6 +83,7 @@ class _TravelHomePageState extends State<TravelHomePage> {
           SizedBox(height: 24),
           const Text("Europa", style: TextStyle(fontSize: 18)),
           const SizedBox(height: 8),
+          // ListView in Sizedbox für Europa
           SizedBox(
             height: 140,
             child: ListView(
@@ -99,6 +102,7 @@ class _TravelHomePageState extends State<TravelHomePage> {
           const SizedBox(height: 24),
           const Text("Südamerika", style: TextStyle(fontSize: 18)),
           const SizedBox(height: 8),
+          // ListView in Sizedbox für
           SizedBox(
             height: 140,
             child: ListView(
@@ -124,45 +128,6 @@ class _TravelHomePageState extends State<TravelHomePage> {
                 .toList(),
           ),
         ],
-      ),
-    );
-  }
-}
-
-//CountryCard
-class CountryCard extends StatelessWidget {
-  final String emoji;
-  final String name;
-  final VoidCallback? onTap;
-
-  const CountryCard({
-    super.key,
-    required this.emoji,
-    required this.name,
-    this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 120,
-        margin: const EdgeInsets.symmetric(horizontal: 8),
-        child: Card(
-          elevation: 4,
-          child: Padding(
-            padding: EdgeInsetsGeometry.symmetric(vertical: 16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(emoji, style: TextStyle(fontSize: 32)),
-                const SizedBox(height: 8),
-                Text(name),
-              ],
-            ),
-          ),
-        ),
       ),
     );
   }
