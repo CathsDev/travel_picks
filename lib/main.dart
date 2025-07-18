@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_picks/country_card.dart';
+import 'package:travel_picks/floating_action_button_example.dart';
 import 'package:travel_picks/welcome_card.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class TravelApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text("Travel Picks")),
         body: const TravelHomePage(),
+        floatingActionButton: FloatingActionButtonExample(),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
